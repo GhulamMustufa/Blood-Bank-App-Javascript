@@ -1,0 +1,123 @@
+body{
+    background-color: rgba(35, 35, 35, 0.8);
+    
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 400;
+    font-family: HelveticaNeueLTPro-Lt!important;
+    color: #666;
+}
+h1,h2,h3,h4,h5{
+    font-family: HelveticaNeueLTPro-Lt!important;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #332f2e;
+}
+.main-div{
+    width: 70%;
+    background-color: white;
+    margin: 5px auto;
+}
+
+.img1{
+    margin:16px 0px 0px 13px;
+    max-width: 100%;
+}
+.mainbody{
+    background-color: #d6351e;
+    color: #fff;
+    font-weight: 400;
+    margin: 23px 0px 0px 0px;
+    
+    padding: 25px 26px 28px 37px; 
+}
+
+.mainbodyh1{
+    color: #fff;
+    font-weight: 500;
+    font-size: 32px;
+}
+.mainbodyp{
+    text-align: center;  
+}
+.btnHome{
+    color: white;
+    border-color: white;
+    background-color: #d6351e;
+    display: inline;
+    float: right;
+    margin-top: 15px;
+}
+.btnHome:hover{
+    background-color: white;
+    color: #332f2e;
+    border-color: #d6351e;
+    font-weight: 550;
+    display: inline;
+}
+.mainbody1{
+    margin-top: 15px;
+}
+.mainfooter{
+    background-color: rgba(245, 165, 227, 0.32);
+   padding: 77px 20px;
+}
+.pfooter{
+    font-size: 18px;
+    font-weight: 430px;
+}
+.box{
+    background-color: #d6351e;
+    color: white;
+    font-size: 32px;
+    border-radius: 3px;
+    padding: 6px;
+}
+.block123{
+    padding: 11px 0px;
+    margin-left: -24px;
+    
+}
+.footerp2{
+    text-align: center;
+    background-color: #d4cfcf;
+    font-size: 15px;
+}
+.a3{
+    color: white;
+}
+.a3:hover{
+    
+    color: #332f2e;
+}
+.a3:active{  
+    color: white;
+}
+.a3:visited{  
+    color: white;
+}
+.a4{
+    color: black;
+}
+.modal1{
+    color: #d6351e;
+}
+.ul1{
+    padding-left: 10px;
+}
+.Bloodrequest{
+    color: #d6351e;
+    font-weight: 500;
+    font-size: 32px;
+}
+.card{
+    background-color: #e5e5e5;
+    color: #666;
+    border: none;
+    border-bottom: solid #666 1px;
+    margin-bottom: 12px;
+    padding: 0px;
+}
+.colorred{
+    color: #d6351e;
+}

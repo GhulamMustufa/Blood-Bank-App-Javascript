@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blood Bank - home</title>
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- bootstrap 4 -->
+
+
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    
+    <div class="main-div">
+        
+        <h1 class="h1home" title="Blood Bank"><img src="images/b.png" alt="Blood Bank" class="img1 img-fluid"></h1>
+            <div class="mainbody container">
+                    <div class="row">
+                                <div class="col-sm-5 mainbody1">
+                                    <h2 class="mainbodyh1">Whose life will you save?</h2> 
+                                    <p class="mainbodyp"> The life you save may be someones mother, daughter, or a friend.Donate blood today!</p>
+                                    <h4 class="">Want to become a blood donor? <a href="#SignupModal" data-toggle="modal"><input type="button" value="Register Now" class="btn btn-danger btnHome "></a></h4>
+                                </div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-5">
+                            <h3>Log in</h3>
+                            <div>
+                                    <div class="form-group">
+                                            <input type="email" class="form-control" id="InputEmailLogin" required="required" aria-describedby="emailHelp" placeholder="Enter email">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" id="InputPasswordLogin" minlength="6" required="required" placeholder="Password">
+                                            <small id="emailHelp" class="form-text text-muted">Your email is protected.<button type="submit" onclick="login()" class="btn btn-danger btnHome">Next</button><br /><a href="#SignupModal" class="a3" data-toggle="modal">or Signup today!</a>  
+                                                </small>
+                                            
+                                        </div>
+                                    </div>
+                        </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade signupmodal" id="SignupModal" tabindex="-1" role="dialog" aria-labelledby="SignupModal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="SignupModal">Sign up</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                           
+                          <div >
+                                    <div class="form-group signupmargin">
+                                  <label for="InputUserNameSignup">Username:</label>
+                                  <input type="text" class="form-control" id="InputUserNameSignup" placeholder="Your Name" required="required">
+                                </div>
+                              <div class="form-group signupmargin">
+                                  <label for="InputEmailSignup">Email address:</label>
+                                  <input type="email" class="form-control" id="InputEmailSignup" required="required" aria-describedby="emailHelp" placeholder="ex: ms@gmail.com">
+                                  <small id="emailHelp" class="form-text text-muted">your email is protected</small>
+                                </div>
+                                <div class="form-group signupmargin">
+                                  <label for="InputPasswordSignup">Password</label>
+                                  <input type="password" class="form-control" id="InputPasswordSignup" placeholder="Password" minlength="6" required="required">
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                          <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                          <button type="submit" class="btn btn-primary" onclick="signUp();" id="submitbtn">Submit</button>
+                        </div>
+                    </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+            <!-- Modal -->
+
+
+            <div class="mainfooter container">
+                <div class="row">
+                    <div class="col-sm-2"><img src="images/e.png" alt="" class="img2"></div>
+                    <div class="col-sm-2 block123">
+                    <span class="box">0</span>
+                    <span class="box">3</span>
+                    <span class="box">5</span>
+                    <span class="box">4</span>
+                    <p class="pfooter">Blood Donors</p>
+                        
+                 </div>
+                    <div class="col-sm-2"><img src="images/f.png" alt="" class="img2"></div>
+                    <div class="col-sm-2 block123">
+                        <span class="box">0</span>
+                        <span class="box">4</span>
+                        <span class="box">7</span>
+                        <span class="box">6</span>
+                        <p class="pfooter">Blood Requests</p>
+                    </div>
+                    <div class="col-sm-2"><img src="images/g.png" alt="" class="img2"></div>
+                    <div class="col-sm-2 block123">
+                        <span class="box">0</span>
+                        <span class="box">0</span>
+                        <span class="box">8</span>
+                        <span class="box">4</span>
+                        <p class="pfooter">Active Donors</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="footerp2">Designed by <br /> Ghulam Mustafa</p>
+            </div>
+    </div>
+
+
+ 
+    
+
+<!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDnZ5iFooLa2IPj6agNWefPTg1wIWmNCqM",
+    authDomain: "simple-calculator-e5e83.firebaseapp.com",
+    databaseURL: "https://simple-calculator-e5e83.firebaseio.com",
+    projectId: "simple-calculator-e5e83",
+    storageBucket: "simple-calculator-e5e83.appspot.com",
+    messagingSenderId: "984588092315"
+  };
+  firebase.initializeApp(config);
+</script>
+<!-- Firebase -->
+<!-- bootstrap 4 -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<!-- bootstrap 4 -->
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blood Bank - Dashboard</title>
+     <!-- bootstrap 4 -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+     <!-- bootstrap 4 -->
+ 
+ 
+     <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+        <div class="main-div">
+                <h1 class="h1home" title="Blood Bank"><img src="images/b.png"  alt="Blood Bank" class="img1 img-fluid"></h1>
+<!-- head -->
+                <div class="mainbody container">
+                        <div class="row">
+                                <div class="col-sm">
+                                        <h2 class="mainbodyh1"><a href="#BloodRequestModal" class="a3" data-toggle="modal"><img src="images/f.png" height="65" width="65" alt="Blood Request"> Create a Blood Request</a></h2>
+                                </div>
+                                <div class="col-sm"></div>
+
+                        </div>
+                    </div>
+                    <!-- feeds for blood requests -->
+                    <div class="mainfooter container" >
+                      <div class="row">
+                          <div class="col-sm-6">
+                            <h2 class="Bloodrequest">Blood Requests</h2>
+                            <div id="bloodRequestDiv" class="bloodRequestDiv"></div>
+
+                          </div>
+                          <div class="col-sm-6">
+                              <h2 class="Bloodrequest">Recent Donors</h2>
+                            </div>
+
+                      </div>
+                      
+                      </div>
+
+                      
+                      <div>
+                        <p class="footerp2">Design by <a class="a4" href="https://shahzaib-com.firebaseapp.com/">Bazooka.co</a><br />Ghulam Mustafa</p>
+                        </div>
+
+ <!-- Modal -->
+            <div class="modal fade signupmodal" id="BloodRequestModal" tabindex="-1" role="dialog" aria-labelledby="BloodRequestModal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title" id="BloodRequestModal">Request Blood</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                           <!-- all content forms -->
+                          <div>
+                                <form onsubmit="bloodRequestSubmit();">
+                                    <ul class="ul1"><li>
+                                          <h5 class="modal1">PATIENT DETAILS</h5></li>
+                                         <div class="form-group">
+                                          <label for="PatientName">Patient Name</label>
+                                          <input type="text" required  class="form-control" id="PatientName" aria-describedby="emailHelp" placeholder="Name">
+                                          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                                          
+                                          <label for="BloodGroup">Blood Group </label>
+                                          <select required class="form-control" id="BloodGroup">
+                                            <option disabled>Select</option>
+                                            <option>A+</option>
+                                            <option>B+</option>
+                                            <option>O+</option>
+                                            <option>O-</option>
+                                            <option>A-</option>
+                                            <option>B-</option>
+                                            <option>AB+</option>
+                                            <option>AB-</option>
+                                          </select>
+                                        
+
+                                        <label for="City">City</label>
+                                        <select required class="form-control" id="City">
+                                          <option disabled>Select</option>
+                                          <option>Karachi</option>
+                                          <option>Islamabad</option>
+                                          <option>Quetta</option>
+                                          <option>Gwadar</option>
+                                          <option>Hyderabad</option>
+                                          <option>Sukker</option>
+                                          <option>Lahore</option>
+                                          <option>Gujranwala</option>
+                                          <option>Mirpur</option>
+                                          <option>Kashmir</option>
+                                          <option>Tando Adam</option>
+                                          <option>Rawalpindi</option>
+                                          <option>Faislabad</option>
+                                          <option>Multan</option>
+                                        </select>
+
+
+                                        <label for="DoctorName">Doctor Name</label>
+                                        <input type="text" required class="form-control" id="DoctorName" aria-describedby="emailHelp" placeholder="Name">
+   
+                                        <label for="HospitalNameAddress">Hospital Name & Address</label>
+                                        <textarea required class="form-control" id="HospitalNameAddress" rows="3"></textarea>
+                                      </div>
+
+                                      <li>
+                                            <h5 class="modal1">CONTACT DETAILS</h5></li>
+                                            <div class="form-group">
+                                                  
+                                          <label for="ContactName">Contact Name</label>
+                                          <input type="text" required class="form-control" id="ContactName" placeholder="Name">
+
+                                          <label for="ContactNumber ">Contact Number</label>
+                                          <input type="number" required class="form-control" id="ContactNumber" placeholder="Number">
+                                        
+                                           <label for="ContactEmailID ">Contact Email ID</label>
+                                           <input type="email" required class="form-control" id="ContactEmailID" placeholder="Email">
+                                           <small id="emailHelp" class="form-text text-muted">We'll never share your email with blood donors.</small>
+                                     
+                                           <label for="AdditionalInformation">Additional Information</label>
+                                           <textarea class="form-control" id="AdditionalInformation" rows="3">must</textarea>
+
+                                           <label for="WhenRequired">When Required</label>
+                                           <input type="date" required class="form-control" id="WhenRequired" placeholder="Select">
+                                        </div>
+                                    
+                                        
+                        <!-- all content forms -->
+                        <div class="modal-footer">
+                          <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+                          <button type="submit" class="btn btn-primary"  id="submitbtn">Submit</button>
+                          <!-- <button type="submit" class="btn btn-primary" onclick="signUp();" id="submitbtn">Submit</button> -->
+                          
+                        </div>
+                    </form>
+                    </div>
+                    
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                    <!-- Modal -->
+                
+              </div>
+
+
+
+    <!-- Firebase -->
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDnZ5iFooLa2IPj6agNWefPTg1wIWmNCqM",
+        authDomain: "simple-calculator-e5e83.firebaseapp.com",
+        databaseURL: "https://simple-calculator-e5e83.firebaseio.com",
+        projectId: "simple-calculator-e5e83",
+        storageBucket: "simple-calculator-e5e83.appspot.com",
+        messagingSenderId: "984588092315"
+      };
+      firebase.initializeApp(config);
+    </script>
+<!-- Firebase -->
+<!-- bootstrap 4 -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<!-- bootstrap 4 -->
+<script src="app.js"></script>
+<script src="app1.js"></script>
+</body>
+</html>
